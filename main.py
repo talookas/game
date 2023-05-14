@@ -151,13 +151,13 @@ while on_jooksmas:
         ekraan.blit(objekti_pilt, (objekt[0], objekt[1]))
 
     # Kontrollib, kas iga loendis olev plahvatus on endiselt nähtava kestusega 500 millisekundit
-    for explosion in plahvatused:
-        if pygame.time.get_ticks() - explosion['aeg'] <= 500:
+    for plahvatus in plahvatused:
+        if pygame.time.get_ticks() - plahvatus['aeg'] <= 500:
             # Kui tõsi, joonistab plahvatuspilt aknale selle asendi, kasutades sõnastikku salvestatud ristküliku teavet
-            ekraan.blit(plahvatuse_pilt, explosion['ristkülik'])
+            ekraan.blit(plahvatuse_pilt, plahvatus['ristkülik'])
         else:
              # Kui ei, eemaldab plahvatussõnastik loendist, kuna seda pole enam vaja
-             plahvatused.remove(explosion)
+             plahvatused.remove(plahvatus)
 
     for vaenlane in vaenlased:
         ekraan.blit(vaenlase_pilt, (vaenlane[0], vaenlane[1]))
