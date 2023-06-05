@@ -98,10 +98,10 @@ def paus_menu():
     pygame.display.update()
 
 
-def kontrolli_kokkupuuteid(objek_x, objek_y, objek_w, objek_h, vaenlane_x, vaenlane_y, vaenlane_w, vaenlane_h):
+def kontrolli_kokkupuuteid(objek_x, objek_y, objek_w, objek_h, objek2_x, objek2_y, objek2_w, objek2_h):
     # teeb objektide jaoks piiri kastid
     objek_rect = pygame.Rect(objek_x, objek_y, objek_w, objek_h)
-    objek2_rect = pygame.Rect(vaenlane_x, vaenlane_y, vaenlane_w, vaenlane_h)
+    objek2_rect = pygame.Rect(objek2_x, objek2_y, objek2_w, objek2_h)
     # tagastab kas objekti ja objekt2 piiri kastid põrkuvad või mitte
     return objek_rect.colliderect(objek2_rect)
 
