@@ -178,7 +178,7 @@ while on_jooksmas:
                     vaenlased.remove(vaenlane)
                     plahvatuse_rect = plahvatuse_pilt.get_rect(center=(vaenlane[0] + vaenlase_pilt.get_width() / 2, vaenlane[1] + vaenlase_pilt.get_height() / 2))
                     # lisab plahvatuse informatsioon loendisse sõnastikuna
-                    plahvatused.append({'ristkülik': plahvatuse_rect, 'aeg': pygame.time.get_ticks()})
+                    plahvatused.append({'pos/suurus': plahvatuse_rect, 'aeg': pygame.time.get_ticks()})
                     plahvatuse_heli.play()
                     punktid += 10
                     # toob esile rohkem vaenlasi
@@ -191,7 +191,7 @@ while on_jooksmas:
     # kontrollib loendis olevat plahvatust
     for plahvatus in plahvatused:
         if pygame.time.get_ticks() - plahvatus['aeg'] <= 500:
-            ekraan.blit(plahvatuse_pilt, plahvatus['ristkülik'])
+            ekraan.blit(plahvatuse_pilt, plahvatus['pos/suurus'])
         else:
              plahvatused.remove(plahvatus)
 
